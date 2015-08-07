@@ -1,0 +1,16 @@
+{
+  "docName": "API 接口文档"	,
+  "version": "1.0",
+  "showResultExample": true,
+  "apiAccessBaseUrl": "localhost:8080/apiService/",
+  "installers": [
+    {
+      "format": "html",
+      "installer": "org.tangerine.apiresolver.doc.support.SimpleHtmlDocInstaller"
+    },
+    {
+      "format": "pdf",
+      "installer": "org.tangerine.apiresolver.doc.support.SimplePdfDocInstaller"
+    }
+  ]
+}
