@@ -56,9 +56,9 @@
 		<finalName>api-resolver-sample</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.tangerine</groupId>
+				<groupId>com.github.linkeer8802</groupId>
 				<artifactId>api-resolver-maven-plugin</artifactId>
-				<version>1.0</version>
+				<version>1.0-SNAPSHOT</version>
 				<executions>
 					<execution>
 						<id>apiDocFetch</id>

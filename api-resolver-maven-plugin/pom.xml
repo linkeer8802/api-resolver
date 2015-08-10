@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.github.linkeer8802</groupId>
 		<artifactId>api-resolver</artifactId>
-		<version>1.0</version>
+		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>api-resolver-maven-plugin</artifactId>
 	<packaging>maven-plugin</packaging>
