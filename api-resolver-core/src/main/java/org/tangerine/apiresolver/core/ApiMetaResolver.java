@@ -117,7 +117,7 @@ public class ApiMetaResolver {
 		ApiParamMeta[] annotationApiParamMetas = getApiParamMetaByAnnotation(apiMethod);
 		List<ApiParamMeta> apiParamMetas = new ArrayList<ApiParamMeta>();
 		
-		for (int i = 0; i < apiMethod.getParameterCount(); i++) {
+		for (int i = 0; i < apiMethod.getParameterTypes().length; i++) {
 			if (annotationApiParamMetas != null 
 					&& i < annotationApiParamMetas.length 
 					&& annotationApiParamMetas[i] != null) {

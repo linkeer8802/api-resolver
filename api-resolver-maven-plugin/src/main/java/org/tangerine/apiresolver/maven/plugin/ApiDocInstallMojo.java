@@ -85,16 +85,13 @@ public class ApiDocInstallMojo extends AbstractMojo {
 	 * @throws Exception
 	 */
 	private void initProjectClassLoader() throws Exception {
-//		for (Artifact artifact : project.get) {
-//			getLog().info("getDependencyArtifacts:" + artifact);
-//		}
 		int i = 0;
 		for (URL url : descriptor.getClassRealm().getURLs()) {
-			getLog().info("["+(++i)+"]before url:" + url);
+			getLog().debug("["+(++i)+"]before url:" + url);
 		}
 		i = 0;
 		for (Artifact artifact : project.getArtifacts()) {
-			getLog().info("["+(++i)+"]artifact:" + artifact.getFile());
+			getLog().debug("["+(++i)+"]artifact:" + artifact.getFile());
 			descriptor.getClassRealm().addURL(artifact.getFile().toURI().toURL());
 		}
 		
@@ -102,10 +99,9 @@ public class ApiDocInstallMojo extends AbstractMojo {
 		ProjectClassLoader.addURLs(projectUrl);
 		ProjectClassLoader.addURLs(descriptor.getClassRealm().getURLs());
 		
-//		descriptor.getClassRealm().addURL(projectUrl);
 		i = 0;
 		for (URL url : ProjectClassLoader.get().getURLs()) {
-			getLog().info("["+(++i)+"]after url:" + url);
+			getLog().debug("["+(++i)+"]after url:" + url);
 		}
 	}
 }

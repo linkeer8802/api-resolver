@@ -34,9 +34,9 @@ public class AnnotationApiMapping extends ApiMapping {
 		if (!StringUtils.isEmpty(mappingPrefix)) {
 			mapping.append(mappingPrefix).append(".");
 		}
-		System.out.println("=================================");
-		System.out.println("=================================" + method);
-		System.out.println("=================================" + method.toGenericString());
+//		System.out.println("=================================");
+//		System.out.println("=================================" + method);
+//		System.out.println("=================================" + method.toGenericString());
 		mapping.append(method.getAnnotation(org.tangerine.apiresolver.annotation.ApiMapping.class).value());
 		String version = clz.getAnnotation(org.tangerine.apiresolver.annotation.ApiMapping.class).version();
 		if (StringUtils.isEmpty(version)) {

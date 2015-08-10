@@ -77,7 +77,6 @@ public class SimpleHtmlDocInstaller extends AbstractApiDocInstaller {
 		for (ApiDoc apiDoc : apiDocs) {
 			Map<String, Object> data = new HashMap<String, Object>();
 			data.put("apiDoc", apiDoc);
-			System.out.println(apiDoc.getName());
 			createStaticFile(data, "api-doc.ftl", htmlInstallDir, "api-doc-" + apiDoc.getId() + ".html");
 		}
 	}

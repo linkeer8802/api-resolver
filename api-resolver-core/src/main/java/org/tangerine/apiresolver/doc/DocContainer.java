@@ -1,7 +1,6 @@
 package org.tangerine.apiresolver.doc;
 
 import java.io.File;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.URL;
@@ -57,7 +56,7 @@ public class DocContainer {
 				resourceMap.put(resource.getFilename(), resource.getURL());
 			}
 			for (URL url : resourceMap.values()) {
-				System.out.println("load api doc meta data from:" + url);
+//				System.out.println("load api doc meta data from:" + url);
 				InputStreamReader reader = new InputStreamReader(url.openStream(), ApiDoclet.DOC_ENCODING);
 				result.addAll((Collection<? extends T>) JsonUtil.fromJson(reader, typeOfT));
 				reader.close();
@@ -118,16 +117,5 @@ public class DocContainer {
 
 	public ApiTypeDocQuery getApiTypeDocQuery() {
 		return apiTypeDocQuery;
-	}
-	
-	public static void main(String[] args) throws Exception {
-		ProjectClassLoader.addURLs(new File("F:\\兴邦\\workspace\\xband-qiuying\\xband-qiuying-inf\\xband-qiuying-inf-service\\target\\xband-qiuying-inf-service-1.0-SNAPSHOT.jar").toURI().toURL());
-		URL url = ProjectClassLoader.R("META-INF/APIDOC");
-		InputStream is = url.openStream();
-		System.out.println(url);
-		Resource[] rs = new PathMatchingResourcePatternResolver(ProjectClassLoader.get()).getResources(ApiDoclet.DOC_DIR.replace(File.separator, "/")  + "/" + "categ*.json");
-		for (Resource resource : rs) {
-			System.out.println(resource.getFilename());
-		}
 	}
 }

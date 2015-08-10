@@ -2,7 +2,6 @@ package org.tangerine.apiresolver.util;
 
 import java.io.File;
 import java.io.FileFilter;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -87,26 +86,5 @@ public class FileUtil {
 			
 			return include && !exclude;
 		}
-	}
-	
-	public static void main(String[] args) {
-		List<String> includes = new ArrayList<String>();
-		List<String> excludes = new ArrayList<String>();
-		includes.add("**/org/tangerine/apiassistant/sample/**/*.java");
-		excludes.add("**/org/tangerine/apiassistant/sample/child/*.java");
-		
-		final AntPathFileMatcher antPathFileMatcher = new AntPathFileMatcher(includes, excludes);
-		
-		File sourceDirectory = new File("F:/兴邦/workspace/api-helper-sample/src/main/java");
-		FileUtil.traverse(sourceDirectory , null, new FileHandler() {
-			public void handle(File file) {
-				if (antPathFileMatcher.match(file)) {
-					System.out.println("path:" + file.getAbsolutePath());
-				}
-			}
-		});
-//		AntPathMatcher matcher = new AntPathMatcher();
-//		System.out.println(matcher.match("*/**/org/tangerine/apiassistant/sample/**/", 
-//				"F:/兴邦/workspace/api-helper-sample/src/main/java/org/tangerine/apiassistant/sample"));
 	}
 }
