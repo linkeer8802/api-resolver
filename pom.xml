@@ -40,6 +40,12 @@
 		<name>weird</name>
 		<url>http://blog.csdn.net/wrd1697</url>
 	</organization>
+	
+	<scm>
+        <url>scm:git:git@github.com:linkeer8802/api-resolver</url>
+        <connection>scm:git:git@github.com:linkeer8802/api-resolver</connection>
+        <tag>api-resolver-base</tag>
+    </scm>
 
 	<properties>
 		<encoding>UTF-8</encoding>
