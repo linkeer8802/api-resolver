@@ -89,7 +89,7 @@ public class ApiResolver implements BeanFactoryAware, InitializingBean {
 //		this.baseInterfacePackage = baseInterfacePackage;
 //	}
 
-	/***************************************private*********************************************/
+	///////////////////////////////private//////////////////////////////////////////////////////////////
 	
 	protected Object[] getMethodArgs(Method method, Map<String, String[]> params) throws Exception {
 		

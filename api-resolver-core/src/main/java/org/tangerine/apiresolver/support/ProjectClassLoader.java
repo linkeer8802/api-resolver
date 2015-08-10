@@ -56,8 +56,7 @@ public class ProjectClassLoader extends URLClassLoader{
 	 * @see URLClassLoader#addURL java.net.URLClassLoader.addURL(URL url)
 	 * @author weird
 	 * @version 1.0
-	 * @param parent
-	 * @param urls
+	 * @param urls urls
 	 */
 	public static void addURLs(URL... urls) {
 		for (URL url : urls) {

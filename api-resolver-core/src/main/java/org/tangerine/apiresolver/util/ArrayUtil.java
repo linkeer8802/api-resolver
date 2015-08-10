@@ -5,15 +5,13 @@ import java.lang.reflect.Array;
 
 /**
  * @author weird
- *
  */
 public class ArrayUtil {
 	/**
 	 * 通过反射将指定的 值分配给数组的每个元素。
 	 * @author weird
-	 * @version 1.0
-	 * @param array
-	 * @param value
+	 * @param array array object
+	 * @param value element value
 	 */
 	public static void fill(Object array, Object value) {
 		if (array.getClass().isArray()) {
