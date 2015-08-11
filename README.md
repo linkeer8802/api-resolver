@@ -1,2 +1,2 @@
 # api-resolver
-resolve api mapping and  doc tools
+a useful tool for resolve api request mapping and automatic generation api doc.
