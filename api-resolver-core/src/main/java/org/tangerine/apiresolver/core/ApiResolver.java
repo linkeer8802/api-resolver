@@ -7,11 +7,14 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
@@ -75,6 +78,10 @@ public class ApiResolver implements BeanFactoryAware, InitializingBean {
 		} catch (InvocationTargetException e) {
 			throw new APIAccessException(e.getTargetException());
 		}
+	}
+	
+	public final Object resolve(HttpServletRequest request) throws Exception {
+		return resolve(request.getParameter("api"), request.getParameterMap());
 	}
 	
 	@Override

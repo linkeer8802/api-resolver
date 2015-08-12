@@ -34,7 +34,7 @@ public class ClientApiController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value="/i", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value="/clientApi", method = {RequestMethod.POST, RequestMethod.GET})
 	public @ResponseBody Object clientApi(HttpServletRequest request, HttpServletResponse response) {
 		
 		ClientApiRspVO resp = invoke(request);
@@ -47,9 +47,7 @@ public class ClientApiController {
 		ClientApiRspVO resp = new ClientApiRspVO();
 		try {
 			
-			Object result = apiResolver.resolve(
-								request.getParameter("function"), 
-								getParameters(request));
+			Object result = apiResolver.resolve(request);
 			
 			if (result instanceof ClientApiRspVO) {
 				resp = (ClientApiRspVO) result;
